@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="container">
+    <h1 class="form">User Registration</h1>
+</div>
+<div>
+    <form class="form" th:action="@{/register}" method="post"
+          th:object="${user}">
+        <div>
+            <input type="text" data-th-field="*{username}"placeholder="username">
+        </div>
+        <div>
+            <input type="password" data-th-field="*{password}" placeholder="password" required>
+        </div>
+        <div>
+            <button type="submit" >Register</button>
+            <span>Already registered? <a th:href="@{/login}">Login here</a></span>
+        </div>
+    </form>
+</div>
+</body>
+</html>
